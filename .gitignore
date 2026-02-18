@@ -33,3 +33,9 @@ Thumbs.db
 
 # Logs
 *.log
+# Data (large datasets)
+data/
+
+# Kaggle credentials
+.kaggle/
+kaggle.json
