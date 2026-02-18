@@ -1,0 +1,75 @@
+--- Few-Shot Example 1: Database Connection Pool Exhaustion ---
+
+Input signals:
+- Log: connection timeout errors in payment-service (ERROR level, 47 occurrences)
+- Log: pool exhausted warnings in order-service (WARN level, 23 occurrences)
+- Metric: db_connection_pool_usage at 98.5% (z-score: 4.2)
+- Metric: query_latency_p99 = 12.3s (z-score: 5.1)
+- Dependency: payment-service → database link degraded
+
+Output hypotheses:
+[
+  {
+    "theory": "Database connection pool exhaustion causing cascading timeouts across payment and order services",
+    "category": "database",
+    "severity": "critical",
+    "likelihood_score": 0.92,
+    "causal_chain": [
+      {"step": 1, "service": "database", "event": "Connection pool reaches capacity (98.5%)", "relationship": "causes"},
+      {"step": 2, "service": "payment-service", "event": "New connections rejected, timeout errors spike", "relationship": "causes"},
+      {"step": 3, "service": "order-service", "event": "Dependent queries queue up, pool exhaustion warnings", "relationship": "causes"},
+      {"step": 4, "service": "api-gateway", "event": "Upstream timeouts propagate to client-facing endpoints", "relationship": "correlates_with"}
+    ],
+    "estimated_mttr_minutes": 25
+  }
+]
+
+--- Few-Shot Example 2: Memory Leak ---
+
+Input signals:
+- Metric: memory_usage growing linearly from 45% to 89% over 2 hours
+- Metric: gc_pause_time increasing (z-score: 3.8)
+- Log: OutOfMemoryError in user-service (3 occurrences)
+- Dependency: user-service health check failing intermittently
+
+Output hypotheses:
+[
+  {
+    "theory": "Memory leak in user-service causing progressive degradation and eventual OOM failures",
+    "category": "application",
+    "severity": "high",
+    "likelihood_score": 0.85,
+    "causal_chain": [
+      {"step": 1, "service": "user-service", "event": "Memory allocation grows without corresponding deallocation", "relationship": "causes"},
+      {"step": 2, "service": "user-service", "event": "GC pause times increase as heap pressure grows", "relationship": "causes"},
+      {"step": 3, "service": "user-service", "event": "OutOfMemoryError thrown, service becomes unresponsive", "relationship": "causes"},
+      {"step": 4, "service": "api-gateway", "event": "Health checks fail, traffic rerouted", "relationship": "correlates_with"}
+    ],
+    "estimated_mttr_minutes": 45
+  }
+]
+
+--- Few-Shot Example 3: Network Partition ---
+
+Input signals:
+- Dependency: Multiple cross-zone links showing packet loss > 5%
+- Metric: network_latency_ms p99 spike to 850ms (z-score: 6.2)
+- Log: connection reset errors across multiple services
+- Dependency: graph partitioned into 2 disconnected components
+
+Output hypotheses:
+[
+  {
+    "theory": "Network partition between availability zones causing cross-zone communication failures",
+    "category": "network",
+    "severity": "critical",
+    "likelihood_score": 0.88,
+    "causal_chain": [
+      {"step": 1, "service": "network-infrastructure", "event": "Cross-zone link degradation with >5% packet loss", "relationship": "causes"},
+      {"step": 2, "service": "service-mesh", "event": "Connection resets and retries spike across zone boundaries", "relationship": "causes"},
+      {"step": 3, "service": "distributed-services", "event": "Services unable to reach cross-zone dependencies", "relationship": "causes"},
+      {"step": 4, "service": "client-facing", "event": "Request failures for any operation requiring cross-zone data", "relationship": "correlates_with"}
+    ],
+    "estimated_mttr_minutes": 60
+  }
+]

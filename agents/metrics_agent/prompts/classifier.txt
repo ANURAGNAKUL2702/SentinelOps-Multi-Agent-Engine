@@ -1,0 +1,21 @@
+Analyze the following metric signals and classify each anomalous metric.
+
+For each anomalous metric, determine:
+1. anomaly_type: one of ["spike", "sustained", "oscillating", "none"]
+2. severity: one of ["critical", "high", "medium", "low", "info"]
+3. trend: one of ["sudden_spike", "increasing", "stable", "decreasing"]
+4. reasoning: A brief explanation of why this classification was chosen
+
+Also provide:
+- correlations: Pairs of metrics that are statistically related
+- system_summary: Overall assessment of system health
+- confidence_score: 0.0 to 1.0 indicating analysis confidence
+- confidence_reasoning: Why this confidence level was assigned
+
+Respond with valid JSON only. No markdown, no commentary.
+
+Metric Signals:
+{metric_signals}
+
+Service: {service}
+Time Window: {time_window}

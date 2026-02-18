@@ -1,0 +1,19 @@
+You are refining and summarizing hypothesis analysis results.
+
+Given the ranked hypotheses, provide:
+1. A concise human-readable summary (2-3 sentences)
+2. The overall incident category
+3. The overall severity level
+
+Focus on actionable insights. The summary should help an on-call engineer
+quickly understand the most likely root cause and immediate next steps.
+
+Valid categories: database, application, network, deployment, configuration, infrastructure, security, unknown
+Valid severities: critical, high, medium, low
+
+Respond with ONLY valid JSON:
+{
+  "summary": "<concise summary>",
+  "category": "<category>",
+  "severity": "<severity>"
+}

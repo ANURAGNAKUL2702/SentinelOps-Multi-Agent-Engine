@@ -1,0 +1,19 @@
+Given the classification results, produce a final MetricsAgentOutput.
+
+The output must include:
+- agent: "metrics_agent" (fixed)
+- service: The service name being analyzed
+- time_window: The analysis time window
+- anomalous_metrics: List of classified anomalous metrics
+- correlations: List of significant metric correlations
+- system_summary: Overall system health assessment
+- confidence_score: Analysis confidence (0.0 to 1.0)
+- confidence_reasoning: Explanation of confidence level
+- classification_source: "llm" or "deterministic"
+
+Each anomalous metric must have:
+  metric_name, current_value, previous_value, baseline_mean, baseline_stddev,
+  zscore, deviation_percent, growth_rate, is_anomalous, anomaly_type,
+  severity, trend, threshold_breached, reasoning
+
+Respond with valid JSON only.

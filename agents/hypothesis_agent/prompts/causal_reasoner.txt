@@ -1,0 +1,17 @@
+Given a root cause hypothesis and supporting evidence, construct a detailed
+causal chain showing how the root cause propagated through the system.
+
+Each step should identify:
+- The service affected
+- What happened at that service
+- The causal relationship to the next step (causes, contributes_to, correlates_with)
+
+Respond with ONLY valid JSON:
+{
+  "chain": [
+    {"step": 1, "service": "<name>", "event": "<what>", "relationship": "causes"}
+  ],
+  "root_cause_service": "<first service in chain>",
+  "terminal_effect": "<final user-visible symptom>",
+  "confidence": <float 0.0-1.0>
+}

@@ -1,0 +1,28 @@
+Generate 3-5 root cause hypotheses from the following pre-computed evidence signals.
+
+For each hypothesis provide:
+- theory: A clear, actionable theory statement
+- category: One of (database, application, network, deployment, configuration, infrastructure, security)
+- severity: One of (critical, high, medium, low)
+- evidence_supporting: List of evidence descriptions that support this theory
+- evidence_contradicting: Evidence that weakens this theory
+- causal_chain: Step-by-step showing how root cause propagated
+- reasoning: Why you believe this is a plausible root cause
+
+Respond with ONLY valid JSON:
+{
+  "hypotheses": [
+    {
+      "theory": "<clear theory>",
+      "category": "<category>",
+      "severity": "<severity>",
+      "evidence_supporting": ["<evidence>", ...],
+      "evidence_contradicting": ["<evidence>", ...],
+      "causal_chain": [
+        {"step": 1, "service": "<name>", "event": "<what>", "relationship": "causes"}
+      ],
+      "reasoning": "<why>"
+    }
+  ],
+  "confidence": <float 0.0-1.0>
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trend Analysis</title>
+<style>
+:root{--bg:#fff;--fg:#2d3436;--card:#f8f9fa;--accent:#00b894;--shadow:0 2px 8px rgba(0,0,0,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);padding:24px;max-width:1200px;margin:0 auto}
+h1{font-size:1.5rem;margin-bottom:16px} h2{font-size:1.15rem;margin:20px 0 10px}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px}
+.chart-card{background:var(--card);padding:16px;border-radius:10px;box-shadow:var(--shadow);text-align:center}
+.chart-card img{max-width:100%;border-radius:8px}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid #eee}
+th{background:var(--accent);color:#fff;font-size:.8rem}
+</style>
+</head>
+<body>
+<h1>Trend Analysis</h1>
+{% if charts %}
+<div class="charts">
+{% for name, img in charts.items() %}
+<div class="chart-card">
+  <h2>{{ name | replace('_',' ') | title }}</h2>
+  <img src="data:image/png;base64,{{ img }}" alt="{{ name }}">
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% if analytics %}
+<h2>Summary</h2>
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td>Total Incidents</td><td>{{ analytics.total_incidents }}</td></tr>
+<tr><td>Avg MTTR</td><td>{{ "%.1f" | format(analytics.average_mttr_minutes) }} min</td></tr>
+<tr><td>Avg MTTD</td><td>{{ "%.1f" | format(analytics.average_mttd_minutes) }} min</td></tr>
+<tr><td>SLO Compliance</td><td>{{ "%.1f" | format(analytics.slo_compliance * 100) }}%</td></tr>
+</tbody></table>
+{% if analytics.common_root_causes %}
+<h2>Common Root Causes</h2>
+<table><thead><tr><th>Root Cause</th><th>Count</th></tr></thead><tbody>
+{% for cause, cnt in analytics.common_root_causes %}
+<tr><td>{{ cause }}</td><td>{{ cnt }}</td></tr>
+{% endfor %}</tbody></table>
+{% endif %}
+{% endif %}
+</body>
+</html>

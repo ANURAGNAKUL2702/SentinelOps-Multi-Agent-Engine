@@ -1,0 +1,46 @@
+### Example 1: Missed Database Failure
+AI Verdict: "network_partition_between_services"
+Ground Truth: "database_connection_pool_exhaustion"
+Accuracy: 0.25
+
+Analysis:
+{
+  "recommendations": [
+    "Improve database metrics monitoring: connection pool usage, active connections, and wait times should be primary signals.",
+    "Add correlation between increased latency and database health indicators.",
+    "Review dependency graph to ensure database is correctly modeled as upstream dependency for all data-dependent services."
+  ],
+  "analysis": "The AI misattributed cascading database failures to a network partition because the symptoms (timeouts, connection errors) are similar. The key differentiator — connection pool metrics going to 100% utilization — was not weighted heavily enough by the Metrics Agent.",
+  "confidence_in_analysis": 0.85
+}
+
+### Example 2: Correct Diagnosis
+AI Verdict: "auth-service crash due to OOM"
+Ground Truth: "auth-service crash due to memory_leak"
+Accuracy: 0.92
+
+Analysis:
+{
+  "recommendations": [
+    "Minor: Distinguish between OOM kill and gradual memory leak in terminology for more precise diagnosis.",
+    "Add memory trend analysis (gradual increase vs sudden spike) to differentiate leak from spike."
+  ],
+  "analysis": "The AI correctly identified the service and failure mode but used imprecise terminology. OOM and memory_leak are closely related — the root cause identification is essentially correct but could be more specific about the mechanism.",
+  "confidence_in_analysis": 0.90
+}
+
+### Example 3: Hallucinated Service
+AI Verdict: "queue-service backpressure causing payment delays"
+Ground Truth: "payment-service deployment with breaking API change"
+Accuracy: 0.15
+
+Analysis:
+{
+  "recommendations": [
+    "Critical: The AI referenced 'queue-service' which does not exist in the infrastructure. Strengthen service name validation in the Hypothesis Agent.",
+    "Add deployment event detection: correlate error spikes with recent deployments.",
+    "Improve the Root Cause Agent's evidence validation to cross-check service names against the service catalog."
+  ],
+  "analysis": "The AI hallucinated a non-existent service ('queue-service') and constructed a plausible but fabricated causal chain. The actual root cause was a deployment issue, which the agents failed to detect because deployment events were not included in the evidence synthesis.",
+  "confidence_in_analysis": 0.80
+}

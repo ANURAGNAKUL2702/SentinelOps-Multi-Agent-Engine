@@ -1,0 +1,42 @@
+== Example 1: Database Connection Pool Exhaustion ==
+
+Input:
+  Root cause: database_connection_pool_exhaustion
+  Affected services: payment-service, order-service
+  Severity: P1_HIGH
+  Confidence: 0.92
+
+Output:
+{
+  "runbook_title": "Database Connection Pool Exhaustion Remediation",
+  "steps": [
+    {"description": "Check active connections", "command": "SELECT count(*) FROM pg_stat_activity;", "expected_outcome": "Connection count visible"},
+    {"description": "Kill idle connections", "command": "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE state = 'idle' AND query_start < now() - interval '5 minutes';", "expected_outcome": "Idle connections terminated"},
+    {"description": "Increase pool size", "command": "kubectl set env deployment/payment-service DB_POOL_MAX=50", "expected_outcome": "Pool size updated"},
+    {"description": "Restart affected services", "command": "kubectl rollout restart deployment/payment-service deployment/order-service", "expected_outcome": "Services restarted with new pool settings"}
+  ],
+  "communication": {
+    "status_update": "[High Incident] Root cause: database connection pool exhaustion. Affected: payment-service, order-service. ETA: 15 min.",
+    "stakeholder_message": "Database connection limits reached causing payment processing delays. Team is actively remediating. ETA 15 minutes.",
+    "external_comms": "We are experiencing temporary issues with payment processing. Our team is working to resolve this. We expect full resolution within 15 minutes."
+  }
+}
+
+== Example 2: Cascading Failure ==
+
+Input:
+  Root cause: cascading_failure from api-gateway
+  Affected services: api-gateway, auth-service, user-service, notification-service
+  Severity: P0_CRITICAL
+  Confidence: 0.78
+
+Output:
+{
+  "runbook_title": "Cascading Failure Remediation",
+  "steps": [
+    {"description": "Enable circuit breakers", "command": "kubectl set env deployment/api-gateway CIRCUIT_BREAKER_ENABLED=true", "expected_outcome": "Circuit breakers active"},
+    {"description": "Scale healthy replicas", "command": "kubectl scale deployment/api-gateway --replicas=5", "expected_outcome": "Additional replicas running"},
+    {"description": "Isolate failed downstream", "command": "kubectl apply -f traffic-block-downstream.yaml", "expected_outcome": "Failed services isolated"},
+    {"description": "Gradually restore traffic", "command": "kubectl apply -f gradual-restore.yaml", "expected_outcome": "Services restored incrementally"}
+  ]
+}

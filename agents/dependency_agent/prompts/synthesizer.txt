@@ -1,0 +1,7 @@
+Synthesize the dependency analysis results into a final report.
+Include cascading failure risks, bottlenecks, and recommendations.
+
+Analysis data:
+{analysis_data}
+
+Provide a clear, actionable summary.

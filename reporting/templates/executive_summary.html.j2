@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Executive Dashboard</title>
+<style>
+:root{--bg:#f5f6fa;--fg:#2d3436;--card:#fff;--border:#dfe6e9;--accent:#0984e3;--ok:#00b894;--warn:#fdcb6e;--bad:#d63031;--shadow:0 2px 12px rgba(0,0,0,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);padding:24px;max-width:1400px;margin:0 auto}
+h1{font-size:1.6rem;margin-bottom:16px} h2{font-size:1.2rem;margin:24px 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.kpi{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+.kpi-label{font-size:.8rem;text-transform:uppercase;color:#636e72;margin-bottom:4px}
+.kpi-value{font-size:2rem;font-weight:800;color:var(--accent)}
+.kpi-trend{font-size:.75rem;margin-top:4px}
+.kpi-trend.up{color:var(--bad)} .kpi-trend.down{color:var(--ok)} .kpi-trend.stable{color:#636e72}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--accent);color:#fff;font-size:.8rem;text-transform:uppercase}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px}
+.chart-box{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+.chart-box img{max-width:100%;height:auto;border-radius:8px}
+.footer{text-align:center;color:#b2bec3;font-size:.75rem;margin-top:32px}
+</style>
+</head>
+<body>
+<h1>Executive Dashboard</h1>
+<p style="color:#636e72;margin-bottom:20px">Generated: {{ dashboard.generated_at.strftime('%Y-%m-%d %H:%M UTC') if dashboard.generated_at else 'N/A' }}</p>
+
+<div class="kpis">
+{% for kpi in dashboard.kpis %}
+<div class="kpi">
+  <div class="kpi-label">{{ kpi.label }}</div>
+  <div class="kpi-value">{{ kpi.value }}{% if kpi.unit %}<small>{{ kpi.unit }}</small>{% endif %}</div>
+  {% if kpi.change_pct %}<div class="kpi-trend {{ kpi.trend.value }}">{{ "%.1f" | format(kpi.change_pct) }}% {{ kpi.trend.value }}</div>{% endif %}
+</div>
+{% endfor %}
+</div>
+
+{% if dashboard.recent_incidents %}
+<h2>Recent Incidents</h2>
+<table>
+<thead><tr><th>ID</th><th>Root Cause</th><th>Severity</th><th>Duration</th><th>Cost</th><th>Status</th></tr></thead>
+<tbody>
+{% for inc in dashboard.recent_incidents %}
+<tr>
+  <td>{{ inc.get('correlation_id','')[:12] }}…</td>
+  <td>{{ inc.get('root_cause','N/A') }}</td>
+  <td>{{ inc.get('severity','') }}</td>
+  <td>{{ "%.1f" | format(inc.get('duration', 0)) }}s</td>
+  <td>${{ "%.4f" | format(inc.get('total_cost', 0)) }}</td>
+  <td>{{ inc.get('status','') }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
+
+{% if dashboard.charts %}
+<h2>Trends</h2>
+<div class="charts">
+{% for name, img in dashboard.charts.items() %}
+<div class="chart-box">
+  <h3>{{ name | replace('_', ' ') | title }}</h3>
+  <img src="data:image/png;base64,{{ img }}" alt="{{ name }}">
+</div>
+{% endfor %}
+</div>
+{% endif %}
+
+<div class="footer">Autonomous War-Room Simulator — Executive Dashboard</div>
+</body>
+</html>

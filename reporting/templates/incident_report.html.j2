@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incident Report: {{ report.incident_details.scenario_name or report.metadata.correlation_id }}</title>
+<style>
+:root{--bg:#ffffff;--fg:#1a1a2e;--card:#f8f9fa;--border:#e0e0e0;--accent:#4361ee;--p0:#dc3545;--p1:#fd7e14;--p2:#ffc107;--p3:#28a745;--shadow:0 2px 8px rgba(0,0,0,.08)}
+@media(prefers-color-scheme:dark){:root{--bg:#1a1a2e;--fg:#e0e0e0;--card:#16213e;--border:#2a2a4a;--shadow:0 2px 8px rgba(0,0,0,.3)}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;max-width:1200px;margin:0 auto;padding:24px}
+h1{font-size:1.8rem;margin-bottom:8px} h2{font-size:1.3rem;margin:24px 0 12px;border-bottom:2px solid var(--accent);padding-bottom:6px} h3{font-size:1.1rem;margin:16px 0 8px}
+.header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;padding:16px;background:var(--card);border-radius:12px;box-shadow:var(--shadow)}
+.severity-P0_CRITICAL{background:var(--p0);color:#fff;padding:4px 12px;border-radius:20px;font-weight:700;font-size:.85rem}
+.severity-P1_HIGH{background:var(--p1);color:#fff;padding:4px 12px;border-radius:20px;font-weight:700;font-size:.85rem}
+.severity-P2_MEDIUM{background:var(--p2);color:#333;padding:4px 12px;border-radius:20px;font-weight:700;font-size:.85rem}
+.severity-P3_LOW{background:var(--p3);color:#fff;padding:4px 12px;border-radius:20px;font-weight:700;font-size:.85rem}
+.status-badge{background:var(--accent);color:#fff;padding:4px 12px;border-radius:20px;font-size:.85rem}
+.section{margin-bottom:24px;padding:20px;background:var(--card);border-radius:12px;box-shadow:var(--shadow)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:16px}
+.metric-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.metric-label{font-size:.8rem;text-transform:uppercase;color:#888;margin-bottom:4px}
+.metric-value{font-size:1.6rem;font-weight:700;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--accent);color:#fff;font-size:.85rem;text-transform:uppercase}
+tr:hover{background:rgba(67,97,238,.05)}
+.collapsible{cursor:pointer;user-select:none} .collapsible::before{content:'▸ '} .collapsible.open::before{content:'▾ '}
+.content{display:none;padding-top:12px} .content.show{display:block}
+ol,ul{padding-left:24px;margin:8px 0} li{margin:4px 0}
+.chart-container{text-align:center;margin:16px 0}
+.chart-container img{max-width:100%;height:auto;border-radius:8px}
+.rec-item{padding:8px 12px;border-left:3px solid var(--accent);margin:8px 0;background:var(--bg);border-radius:0 8px 8px 0}
+.rec-cat{font-weight:700;font-size:.8rem;text-transform:uppercase;color:var(--accent)}
+.footer{text-align:center;color:#888;font-size:.8rem;margin-top:32px;padding-top:16px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>{{ report.incident_details.scenario_name or "Incident Report" }}</h1>
+    <small>ID: {{ report.metadata.correlation_id }} &bull; Generated: {{ report.metadata.generated_at.strftime('%Y-%m-%d %H:%M UTC') if report.metadata.generated_at else 'N/A' }}</small>
+  </div>
+  <div>
+    <span class="severity-{{ report.executive_summary.severity.value }}">{{ report.executive_summary.severity.value }}</span>
+    <span class="status-badge">{{ report.executive_summary.status.value | upper }}</span>
+  </div>
+</div>
+
+{# ── Executive Summary ── #}
+<div class="section">
+  <h2 class="collapsible open" onclick="toggle(this)">Executive Summary</h2>
+  <div class="content show">
+    <p>{{ report.executive_summary.summary or "No summary available." }}</p>
+    <div class="metrics">
+      <div class="metric-card"><div class="metric-label">Affected Services</div><div class="metric-value">{{ report.executive_summary.affected_services }}</div></div>
+      <div class="metric-card"><div class="metric-label">Users Impacted</div><div class="metric-value">{{ report.executive_summary.estimated_users_impacted }}</div></div>
+      <div class="metric-card"><div class="metric-label">Downtime</div><div class="metric-value">{{ "%.1f" | format(report.executive_summary.total_downtime_minutes) }}<small>min</small></div></div>
+      <div class="metric-card"><div class="metric-label">Confidence</div><div class="metric-value">{{ "%.0f" | format(report.executive_summary.confidence * 100) }}%</div></div>
+      <div class="metric-card"><div class="metric-label">Revenue Impact</div><div class="metric-value">${{ "%.2f" | format(report.executive_summary.estimated_revenue_impact) }}</div></div>
+    </div>
+  </div>
+</div>
+
+{# ── Root Cause Analysis ── #}
+<div class="section">
+  <h2 class="collapsible open" onclick="toggle(this)">Root Cause Analysis</h2>
+  <div class="content show">
+    <p><strong>Root Cause:</strong> {{ report.root_cause_analysis.root_cause or "Unknown" }}</p>
+    <p><strong>Confidence:</strong> {{ "%.0f" | format(report.root_cause_analysis.confidence * 100) }}%
+       &bull; <strong>Validation Accuracy:</strong> {{ "%.0f" | format(report.root_cause_analysis.validation_accuracy * 100) }}%
+       &bull; <strong>Hallucinations:</strong> {{ report.root_cause_analysis.hallucinations_detected }}</p>
+    {% if report.root_cause_analysis.causal_chain %}
+    <h3>Causal Chain</h3>
+    <ol>{% for step in report.root_cause_analysis.causal_chain %}<li>{{ step }}</li>{% endfor %}</ol>
+    {% endif %}
+    {% if report.root_cause_analysis.evidence_trail %}
+    <h3>Evidence Trail</h3>
+    <table><thead><tr><th>Source</th><th>Type</th><th>Description</th><th>Confidence</th></tr></thead><tbody>
+    {% for e in report.root_cause_analysis.evidence_trail %}
+    <tr><td>{{ e.get('source','') }}</td><td>{{ e.get('type','') }}</td><td>{{ e.get('description','') }}</td><td>{{ e.get('confidence','') }}</td></tr>
+    {% endfor %}</tbody></table>
+    {% endif %}
+    {% if report.root_cause_analysis.alternative_hypotheses %}
+    <h3>Alternative Hypotheses</h3>
+    <ul>{% for h in report.root_cause_analysis.alternative_hypotheses %}<li>{{ h.get('theory', h.get('root_cause','')) }} ({{ "%.0f" | format((h.get('confidence', h.get('likelihood_score', 0))) * 100) }}%)</li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+</div>
+
+{# ── Remediation Plan ── #}
+<div class="section">
+  <h2 class="collapsible open" onclick="toggle(this)">Remediation Plan</h2>
+  <div class="content show">
+    {% if report.remediation_plan.runbook_title %}<h3>{{ report.remediation_plan.runbook_title }}</h3>{% endif %}
+    {% if report.remediation_plan.runbook_steps %}
+    <ol>{% for s in report.remediation_plan.runbook_steps %}<li>{{ s }}</li>{% endfor %}</ol>
+    {% endif %}
+    {% if report.remediation_plan.action_items %}
+    <h3>Action Items</h3>
+    <table><thead><tr><th>Priority</th><th>Description</th><th>Owner</th><th>Est. Time</th></tr></thead><tbody>
+    {% for a in report.remediation_plan.action_items %}
+    <tr><td>{{ a.priority }}</td><td>{{ a.description }}</td><td>{{ a.owner }}</td><td>{{ a.estimated_minutes }}m</td></tr>
+    {% endfor %}</tbody></table>
+    {% endif %}
+    {% if report.remediation_plan.rollback_plan %}<p><strong>Rollback:</strong> {{ report.remediation_plan.rollback_plan }}</p>{% endif %}
+    <p><strong>Estimated Resolution:</strong> {{ report.remediation_plan.estimated_resolution_minutes }} minutes</p>
+  </div>
+</div>
+
+{# ── Timeline ── #}
+<div class="section">
+  <h2 class="collapsible open" onclick="toggle(this)">Timeline</h2>
+  <div class="content show">
+    {% if report.visualizations.get('timeline') %}
+    <div class="chart-container"><img src="data:image/png;base64,{{ report.visualizations['timeline'] }}" alt="Timeline Chart"></div>
+    {% endif %}
+    {% if report.timeline.events %}
+    <table><thead><tr><th>Time</th><th>Source</th><th>Event</th><th>Service</th><th>Severity</th></tr></thead><tbody>
+    {% for ev in report.timeline.events %}
+    <tr><td>{{ ev.timestamp.strftime('%H:%M:%S') if ev.timestamp else '' }}</td><td>{{ ev.source }}</td><td>{{ ev.event }}</td><td>{{ ev.service }}</td><td>{{ ev.severity }}</td></tr>
+    {% endfor %}</tbody></table>
+    {% else %}<p>Timeline unavailable.</p>{% endif %}
+  </div>
+</div>
+
+{# ── Cost Report ── #}
+<div class="section">
+  <h2 class="collapsible open" onclick="toggle(this)">Cost Report</h2>
+  <div class="content show">
+    {% if report.visualizations.get('cost_breakdown') %}
+    <div class="chart-container"><img src="data:image/png;base64,{{ report.visualizations['cost_breakdown'] }}" alt="Cost Breakdown"></div>
+    {% endif %}
+    <div class="metrics">
+      <div class="metric-card"><div class="metric-label">Total Cost</div><div class="metric-value">${{ "%.4f" | format(report.cost_report.total_cost) }}</div></div>
+      <div class="metric-card"><div class="metric-label">Total Tokens</div><div class="metric-value">{{ report.cost_report.total_tokens }}</div></div>
+      <div class="metric-card"><div class="metric-label">LLM Calls</div><div class="metric-value">{{ report.cost_report.total_llm_calls }}</div></div>
+    </div>
+    {% if report.cost_report.cost_by_agent %}
+    <table><thead><tr><th>Agent</th><th>Cost ($)</th><th>Tokens</th></tr></thead><tbody>
+    {% for agent, cost in report.cost_report.cost_by_agent.items() %}
+    <tr><td>{{ agent }}</td><td>${{ "%.6f" | format(cost) }}</td><td>{{ report.cost_report.tokens_by_agent.get(agent, 0) }}</td></tr>
+    {% endfor %}</tbody></table>
+    {% endif %}
+  </div>
+</div>
+
+{# ── Performance ── #}
+<div class="section">
+  <h2 class="collapsible" onclick="toggle(this)">Performance Metrics</h2>
+  <div class="content">
+    <div class="metrics">
+      <div class="metric-card"><div class="metric-label">Pipeline Time</div><div class="metric-value">{{ "%.2f" | format(report.performance_metrics.total_pipeline_time) }}s</div></div>
+      <div class="metric-card"><div class="metric-label">Parallel Speedup</div><div class="metric-value">{{ "%.1f" | format(report.performance_metrics.parallel_speedup) }}×</div></div>
+      <div class="metric-card"><div class="metric-label">Timeouts</div><div class="metric-value">{{ report.performance_metrics.timeout_violations }}</div></div>
+      <div class="metric-card"><div class="metric-label">CB Trips</div><div class="metric-value">{{ report.performance_metrics.circuit_breaker_trips }}</div></div>
+    </div>
+    {% if report.performance_metrics.agent_latencies %}
+    <table><thead><tr><th>Agent</th><th>Latency (s)</th></tr></thead><tbody>
+    {% for agent, lat in report.performance_metrics.agent_latencies.items() %}
+    <tr><td>{{ agent }}</td><td>{{ "%.3f" | format(lat) }}</td></tr>
+    {% endfor %}</tbody></table>
+    {% endif %}
+  </div>
+</div>
+
+{# ── Recommendations ── #}
+{% if report.recommendations %}
+<div class="section">
+  <h2 class="collapsible open" onclick="toggle(this)">Recommendations</h2>
+  <div class="content show">
+    {% for rec in report.recommendations %}
+    <div class="rec-item"><div class="rec-cat">{{ rec.category }}</div>{{ rec.description }}</div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="footer">
+  Report generated by Autonomous War-Room Simulator v{{ report.metadata.report_version }} &bull; Report ID: {{ report.metadata.report_id }}
+</div>
+
+<script>
+function toggle(el){el.classList.toggle('open');const c=el.nextElementSibling;c&&c.classList.toggle('show')}
+</script>
+</body>
+</html>

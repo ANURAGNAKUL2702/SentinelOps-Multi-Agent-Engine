@@ -1,0 +1,12 @@
+Classify the following pre-computed dependency analysis signals.
+
+SIGNALS:
+{signals}
+
+CONTEXT:
+{context}
+
+Respond with JSON containing:
+- summary: {total_services, total_dependencies, graph_has_cycles, max_dependency_depth}
+- single_points_of_failure: [{service_name, reason, mitigation}]
+- confidence: float 0.0-1.0

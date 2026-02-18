@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cost Report</title>
+<style>
+:root{--bg:#fff;--fg:#2d3436;--card:#f8f9fa;--accent:#6c5ce7;--shadow:0 2px 8px rgba(0,0,0,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);padding:24px;max-width:1000px;margin:0 auto}
+h1{font-size:1.5rem;margin-bottom:16px} h2{font-size:1.2rem;margin:20px 0 10px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.card{background:var(--card);padding:16px;border-radius:10px;text-align:center;box-shadow:var(--shadow)}
+.card-label{font-size:.75rem;text-transform:uppercase;color:#888} .card-value{font-size:1.5rem;font-weight:700;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid #eee}
+th{background:var(--accent);color:#fff;font-size:.8rem}
+.chart{text-align:center;margin:16px 0} .chart img{max-width:100%;border-radius:8px}
+</style>
+</head>
+<body>
+<h1>Cost Report</h1>
+<div class="summary">
+  <div class="card"><div class="card-label">Total Cost</div><div class="card-value">${{ "%.4f" | format(cost.total_cost) }}</div></div>
+  <div class="card"><div class="card-label">Total Tokens</div><div class="card-value">{{ cost.total_tokens }}</div></div>
+  <div class="card"><div class="card-label">LLM Calls</div><div class="card-value">{{ cost.total_llm_calls }}</div></div>
+  <div class="card"><div class="card-label">Efficiency</div><div class="card-value">{{ "%.0f" | format(cost.cost_efficiency_score * 100) }}%</div></div>
+</div>
+{% if chart_image %}
+<div class="chart"><img src="data:image/png;base64,{{ chart_image }}" alt="Cost Breakdown"></div>
+{% endif %}
+{% if cost.cost_by_agent %}
+<h2>Cost by Agent</h2>
+<table><thead><tr><th>Agent</th><th>Cost ($)</th><th>Tokens</th><th>Calls</th></tr></thead><tbody>
+{% for agent, c in cost.cost_by_agent.items() %}
+<tr><td>{{ agent }}</td><td>${{ "%.6f" | format(c) }}</td><td>{{ cost.tokens_by_agent.get(agent,0) }}</td><td>{{ cost.llm_calls_by_agent.get(agent,0) }}</td></tr>
+{% endfor %}</tbody></table>
+{% endif %}
+</body>
+</html>

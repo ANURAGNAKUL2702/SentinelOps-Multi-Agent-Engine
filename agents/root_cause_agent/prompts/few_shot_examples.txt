@@ -1,0 +1,35 @@
+## Example 1: Database Connection Pool Exhaustion
+
+Evidence:
+- Log Agent: Connection timeout errors in payment-service (conf: 0.82)
+- Metrics Agent: db_connections at 100%, latency p99 spike to 5s (z-score: 4.2)
+- Dependency Agent: payment-service is bottleneck, blast radius = 4 services
+- Hypothesis Agent: "Database connection pool exhausted" (conf: 0.88)
+
+Verdict:
+{
+  "root_cause": "Database connection pool exhaustion in payment-service PostgreSQL instance causing cascading timeouts across 4 downstream services",
+  "confidence": 0.91,
+  "reasoning": "All 4 agents converge on payment-service as the root cause. Metrics confirm db_connections at 100% saturation (z-score 4.2), log agent shows connection timeout errors, dependency analysis confirms 4-service blast radius, and hypothesis agent independently identified connection pool exhaustion with 0.88 confidence. The temporal correlation between connection saturation and downstream timeouts confirms causation.",
+  "category": "database",
+  "severity": "critical",
+  "estimated_mttr_minutes": 15
+}
+
+## Example 2: Configuration Deployment Error
+
+Evidence:
+- Log Agent: 500 errors in api-gateway after deployment (conf: 0.65)
+- Metrics Agent: error_rate spike to 40% at 14:30 UTC (z-score: 6.1)
+- Dependency Agent: api-gateway is entry point, blast radius = 8 services
+- Hypothesis Agent: "Bad configuration deployed" (conf: 0.72)
+
+Verdict:
+{
+  "root_cause": "Misconfigured rate limiting rules deployed to api-gateway at 14:30 UTC causing 40% error rate across all downstream services",
+  "confidence": 0.78,
+  "reasoning": "Temporal correlation between deployment timestamp and error spike strongly suggests configuration change as root cause. Log agent shows 500 errors beginning immediately after deployment. Metrics confirm sudden onset (z-score 6.1) rather than gradual degradation. Dependency analysis shows api-gateway position affects all 8 downstream services. Confidence is moderate (0.78) because log agent confidence is lower (0.65), suggesting some error patterns may be pre-existing.",
+  "category": "configuration",
+  "severity": "high",
+  "estimated_mttr_minutes": 20
+}

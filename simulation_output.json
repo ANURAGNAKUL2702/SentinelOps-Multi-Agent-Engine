@@ -1,0 +1,4860 @@
+{
+  "services": [
+    "api-gateway",
+    "auth-service",
+    "payment-service",
+    "fraud-service",
+    "notification-service",
+    "database",
+    "cache-service",
+    "merchant-portal"
+  ],
+  "dependencies": {
+    "api-gateway": [
+      "auth-service",
+      "payment-service",
+      "merchant-portal"
+    ],
+    "auth-service": [
+      "database",
+      "cache-service"
+    ],
+    "payment-service": [
+      "database",
+      "fraud-service",
+      "notification-service"
+    ],
+    "fraud-service": [
+      "database"
+    ],
+    "notification-service": [
+      "database"
+    ],
+    "merchant-portal": [
+      "api-gateway"
+    ],
+    "cache-service": [],
+    "database": []
+  },
+  "metrics": [
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 25.08,
+      "memory_percent": 43.22,
+      "latency_ms": 55.01,
+      "error_rate": 2.2
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 36.03,
+      "memory_percent": 43.03,
+      "latency_ms": 94.64,
+      "error_rate": 2.2
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 37.91,
+      "memory_percent": 45.76,
+      "latency_ms": 115.95,
+      "error_rate": 1.29
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 38.52,
+      "memory_percent": 41.77,
+      "latency_ms": 141.75,
+      "error_rate": 2.04
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 35.02,
+      "memory_percent": 47.87,
+      "latency_ms": 170.47,
+      "error_rate": 1.55
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 33.5,
+      "memory_percent": 47.36,
+      "latency_ms": 204.68,
+      "error_rate": 2.6
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 38.26,
+      "memory_percent": 46.19,
+      "latency_ms": 221.38,
+      "error_rate": 1.91
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 25.89,
+      "memory_percent": 41.51,
+      "latency_ms": 275.74,
+      "error_rate": 1.92
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 22.56,
+      "memory_percent": 53.01,
+      "latency_ms": 292.68,
+      "error_rate": 2.95
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 29.03,
+      "memory_percent": 49.89,
+      "latency_ms": 298.31,
+      "error_rate": 2.92
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 32.7,
+      "memory_percent": 45.94,
+      "latency_ms": 312.01,
+      "error_rate": 3.81
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 20.42,
+      "memory_percent": 43.86,
+      "latency_ms": 377.07,
+      "error_rate": 2.8
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 23.19,
+      "memory_percent": 53.21,
+      "latency_ms": 408.3,
+      "error_rate": 3.11
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 20.31,
+      "memory_percent": 48.85,
+      "latency_ms": 416.97,
+      "error_rate": 2.86
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 36.45,
+      "memory_percent": 41.15,
+      "latency_ms": 487.41,
+      "error_rate": 3.65
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 34.4,
+      "memory_percent": 45.35,
+      "latency_ms": 503.83,
+      "error_rate": 3.11
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 37.03,
+      "memory_percent": 44.99,
+      "latency_ms": 467.71,
+      "error_rate": 3.49
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 25.69,
+      "memory_percent": 51.68,
+      "latency_ms": 526.06,
+      "error_rate": 3.52
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 20.5,
+      "memory_percent": 42.93,
+      "latency_ms": 548.17,
+      "error_rate": 3.55
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 30.07,
+      "memory_percent": 55.45,
+      "latency_ms": 624.18,
+      "error_rate": 4.71
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 22.65,
+      "memory_percent": 53.55,
+      "latency_ms": 656.49,
+      "error_rate": 5.5
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 25.74,
+      "memory_percent": 40.57,
+      "latency_ms": 625.56,
+      "error_rate": 4.29
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 32.87,
+      "memory_percent": 50.0,
+      "latency_ms": 671.47,
+      "error_rate": 5.35
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 29.14,
+      "memory_percent": 43.91,
+      "latency_ms": 756.5,
+      "error_rate": 5.26
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 38.2,
+      "memory_percent": 46.33,
+      "latency_ms": 694.49,
+      "error_rate": 6.26
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 22.83,
+      "memory_percent": 48.52,
+      "latency_ms": 770.77,
+      "error_rate": 5.71
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 32.53,
+      "memory_percent": 42.06,
+      "latency_ms": 841.44,
+      "error_rate": 6.49
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 25.33,
+      "memory_percent": 46.59,
+      "latency_ms": 773.91,
+      "error_rate": 5.36
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 34.97,
+      "memory_percent": 49.91,
+      "latency_ms": 887.78,
+      "error_rate": 6.92
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "api-gateway",
+      "cpu_percent": 36.37,
+      "memory_percent": 42.21,
+      "latency_ms": 777.01,
+      "error_rate": 7.0
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 18.8,
+      "memory_percent": 48.21,
+      "latency_ms": 35.16,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 30.82,
+      "memory_percent": 48.18,
+      "latency_ms": 46.84,
+      "error_rate": 0.27
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 27.66,
+      "memory_percent": 45.8,
+      "latency_ms": 27.4,
+      "error_rate": 0.24
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 27.29,
+      "memory_percent": 46.34,
+      "latency_ms": 38.26,
+      "error_rate": 0.24
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 25.35,
+      "memory_percent": 48.12,
+      "latency_ms": 30.05,
+      "error_rate": 0.36
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 31.11,
+      "memory_percent": 47.69,
+      "latency_ms": 20.55,
+      "error_rate": 0.08
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 26.47,
+      "memory_percent": 50.52,
+      "latency_ms": 29.6,
+      "error_rate": 0.04
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 22.6,
+      "memory_percent": 53.57,
+      "latency_ms": 47.96,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 25.93,
+      "memory_percent": 47.69,
+      "latency_ms": 74.88,
+      "error_rate": 0.12
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 23.46,
+      "memory_percent": 54.82,
+      "latency_ms": 39.72,
+      "error_rate": 0.43
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 19.22,
+      "memory_percent": 40.86,
+      "latency_ms": 37.52,
+      "error_rate": 0.35
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 21.41,
+      "memory_percent": 50.92,
+      "latency_ms": 48.8,
+      "error_rate": 0.16
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 36.33,
+      "memory_percent": 52.25,
+      "latency_ms": 60.89,
+      "error_rate": 0.41
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 32.57,
+      "memory_percent": 52.06,
+      "latency_ms": 66.81,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 31.19,
+      "memory_percent": 49.47,
+      "latency_ms": 56.61,
+      "error_rate": 0.2
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 22.71,
+      "memory_percent": 52.93,
+      "latency_ms": 63.32,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 25.88,
+      "memory_percent": 43.55,
+      "latency_ms": 27.54,
+      "error_rate": 0.18
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 15.0,
+      "memory_percent": 48.04,
+      "latency_ms": 47.72,
+      "error_rate": 0.12
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 25.85,
+      "memory_percent": 51.28,
+      "latency_ms": 58.46,
+      "error_rate": 0.43
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 24.15,
+      "memory_percent": 53.74,
+      "latency_ms": 66.44,
+      "error_rate": 0.24
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 29.84,
+      "memory_percent": 40.62,
+      "latency_ms": 56.79,
+      "error_rate": 0.13
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 31.84,
+      "memory_percent": 49.12,
+      "latency_ms": 61.61,
+      "error_rate": 0.23
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 24.82,
+      "memory_percent": 53.15,
+      "latency_ms": 56.26,
+      "error_rate": 0.26
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 23.27,
+      "memory_percent": 49.38,
+      "latency_ms": 66.63,
+      "error_rate": 0.06
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 15.48,
+      "memory_percent": 47.4,
+      "latency_ms": 34.02,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 20.94,
+      "memory_percent": 44.92,
+      "latency_ms": 39.76,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 26.8,
+      "memory_percent": 49.74,
+      "latency_ms": 30.64,
+      "error_rate": 0.22
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 20.93,
+      "memory_percent": 54.22,
+      "latency_ms": 42.08,
+      "error_rate": 0.03
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 22.91,
+      "memory_percent": 47.18,
+      "latency_ms": 28.43,
+      "error_rate": 0.45
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "auth-service",
+      "cpu_percent": 28.54,
+      "memory_percent": 42.93,
+      "latency_ms": 77.85,
+      "error_rate": 0.01
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 25.74,
+      "memory_percent": 29.14,
+      "latency_ms": 42.03,
+      "error_rate": 0.1
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 25.09,
+      "memory_percent": 31.38,
+      "latency_ms": 52.96,
+      "error_rate": 0.11
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 27.34,
+      "memory_percent": 34.22,
+      "latency_ms": 65.31,
+      "error_rate": 0.14
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 28.1,
+      "memory_percent": 37.3,
+      "latency_ms": 74.84,
+      "error_rate": 0.19
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 29.77,
+      "memory_percent": 39.07,
+      "latency_ms": 86.29,
+      "error_rate": 0.25
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 30.06,
+      "memory_percent": 40.76,
+      "latency_ms": 98.25,
+      "error_rate": 0.34
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 30.14,
+      "memory_percent": 42.65,
+      "latency_ms": 118.82,
+      "error_rate": 0.44
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 32.23,
+      "memory_percent": 46.22,
+      "latency_ms": 123.38,
+      "error_rate": 0.57
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 33.05,
+      "memory_percent": 46.71,
+      "latency_ms": 137.05,
+      "error_rate": 0.71
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 36.09,
+      "memory_percent": 51.65,
+      "latency_ms": 140.72,
+      "error_rate": 0.87
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 37.4,
+      "memory_percent": 53.2,
+      "latency_ms": 164.27,
+      "error_rate": 1.05
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 34.33,
+      "memory_percent": 54.39,
+      "latency_ms": 184.94,
+      "error_rate": 1.25
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 38.08,
+      "memory_percent": 56.44,
+      "latency_ms": 175.09,
+      "error_rate": 1.47
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 38.34,
+      "memory_percent": 58.2,
+      "latency_ms": 206.49,
+      "error_rate": 1.71
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 39.77,
+      "memory_percent": 60.61,
+      "latency_ms": 199.24,
+      "error_rate": 1.96
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 38.92,
+      "memory_percent": 63.68,
+      "latency_ms": 229.39,
+      "error_rate": 2.24
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 39.69,
+      "memory_percent": 64.62,
+      "latency_ms": 216.94,
+      "error_rate": 2.54
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 42.58,
+      "memory_percent": 66.21,
+      "latency_ms": 258.02,
+      "error_rate": 2.85
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 42.09,
+      "memory_percent": 70.95,
+      "latency_ms": 257.83,
+      "error_rate": 3.18
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 47.09,
+      "memory_percent": 71.73,
+      "latency_ms": 283.84,
+      "error_rate": 3.53
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 46.57,
+      "memory_percent": 75.38,
+      "latency_ms": 271.47,
+      "error_rate": 3.9
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 49.49,
+      "memory_percent": 77.0,
+      "latency_ms": 314.42,
+      "error_rate": 4.3
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 45.28,
+      "memory_percent": 80.65,
+      "latency_ms": 304.23,
+      "error_rate": 4.7
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 48.06,
+      "memory_percent": 80.69,
+      "latency_ms": 298.87,
+      "error_rate": 5.13
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 52.74,
+      "memory_percent": 82.72,
+      "latency_ms": 352.99,
+      "error_rate": 5.58
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 48.44,
+      "memory_percent": 84.12,
+      "latency_ms": 347.44,
+      "error_rate": 6.05
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 50.12,
+      "memory_percent": 86.56,
+      "latency_ms": 334.2,
+      "error_rate": 6.53
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 51.71,
+      "memory_percent": 87.89,
+      "latency_ms": 367.55,
+      "error_rate": 7.03
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 56.07,
+      "memory_percent": 91.31,
+      "latency_ms": 382.65,
+      "error_rate": 7.56
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "payment-service",
+      "cpu_percent": 52.61,
+      "memory_percent": 97.69,
+      "latency_ms": 385.83,
+      "error_rate": 8.1
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 17.21,
+      "memory_percent": 51.83,
+      "latency_ms": 44.72,
+      "error_rate": 0.28
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 16.88,
+      "memory_percent": 41.38,
+      "latency_ms": 35.04,
+      "error_rate": 0.04
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 29.84,
+      "memory_percent": 43.71,
+      "latency_ms": 65.36,
+      "error_rate": 0.12
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 15.53,
+      "memory_percent": 39.51,
+      "latency_ms": 45.18,
+      "error_rate": 0.39
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 19.97,
+      "memory_percent": 48.5,
+      "latency_ms": 53.21,
+      "error_rate": 0.21
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 33.26,
+      "memory_percent": 46.27,
+      "latency_ms": 43.03,
+      "error_rate": 0.38
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 26.67,
+      "memory_percent": 44.59,
+      "latency_ms": 47.52,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 24.05,
+      "memory_percent": 51.63,
+      "latency_ms": 25.63,
+      "error_rate": 0.02
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 22.32,
+      "memory_percent": 47.86,
+      "latency_ms": 29.88,
+      "error_rate": 0.16
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 35.62,
+      "memory_percent": 45.26,
+      "latency_ms": 37.35,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 21.48,
+      "memory_percent": 47.26,
+      "latency_ms": 35.56,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 23.28,
+      "memory_percent": 41.98,
+      "latency_ms": 22.38,
+      "error_rate": 0.31
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 16.64,
+      "memory_percent": 44.27,
+      "latency_ms": 48.12,
+      "error_rate": 0.2
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 27.77,
+      "memory_percent": 43.41,
+      "latency_ms": 23.25,
+      "error_rate": 0.43
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 27.82,
+      "memory_percent": 41.35,
+      "latency_ms": 51.95,
+      "error_rate": 0.21
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 25.32,
+      "memory_percent": 50.36,
+      "latency_ms": 31.86,
+      "error_rate": 0.14
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 27.95,
+      "memory_percent": 52.62,
+      "latency_ms": 79.55,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 26.36,
+      "memory_percent": 49.36,
+      "latency_ms": 34.11,
+      "error_rate": 0.09
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 20.47,
+      "memory_percent": 51.65,
+      "latency_ms": 45.5,
+      "error_rate": 0.18
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 29.77,
+      "memory_percent": 51.24,
+      "latency_ms": 38.99,
+      "error_rate": 0.12
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 21.39,
+      "memory_percent": 45.32,
+      "latency_ms": 50.06,
+      "error_rate": 0.46
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 22.14,
+      "memory_percent": 43.94,
+      "latency_ms": 78.32,
+      "error_rate": 0.32
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 20.56,
+      "memory_percent": 47.87,
+      "latency_ms": 63.91,
+      "error_rate": 0.35
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 21.0,
+      "memory_percent": 44.06,
+      "latency_ms": 50.78,
+      "error_rate": 0.24
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 17.31,
+      "memory_percent": 50.93,
+      "latency_ms": 71.88,
+      "error_rate": 0.16
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 16.68,
+      "memory_percent": 51.93,
+      "latency_ms": 54.33,
+      "error_rate": 0.31
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 18.06,
+      "memory_percent": 45.82,
+      "latency_ms": 20.69,
+      "error_rate": 0.08
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 34.28,
+      "memory_percent": 41.77,
+      "latency_ms": 51.39,
+      "error_rate": 0.11
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 35.93,
+      "memory_percent": 54.39,
+      "latency_ms": 36.49,
+      "error_rate": 0.18
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "fraud-service",
+      "cpu_percent": 24.21,
+      "memory_percent": 42.7,
+      "latency_ms": 85.96,
+      "error_rate": 0.13
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 35.82,
+      "memory_percent": 42.7,
+      "latency_ms": 65.43,
+      "error_rate": 0.06
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 27.44,
+      "memory_percent": 52.36,
+      "latency_ms": 73.03,
+      "error_rate": 0.48
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 34.3,
+      "memory_percent": 39.32,
+      "latency_ms": 85.14,
+      "error_rate": 0.2
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 16.99,
+      "memory_percent": 43.37,
+      "latency_ms": 74.13,
+      "error_rate": 0.03
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 14.39,
+      "memory_percent": 42.2,
+      "latency_ms": 40.62,
+      "error_rate": 0.34
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 25.73,
+      "memory_percent": 51.48,
+      "latency_ms": 25.08,
+      "error_rate": 0.46
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 20.9,
+      "memory_percent": 47.9,
+      "latency_ms": 82.62,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 30.66,
+      "memory_percent": 45.77,
+      "latency_ms": 39.31,
+      "error_rate": 0.04
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 25.74,
+      "memory_percent": 46.33,
+      "latency_ms": 45.93,
+      "error_rate": 0.31
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 29.26,
+      "memory_percent": 53.51,
+      "latency_ms": 22.15,
+      "error_rate": 0.44
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 19.52,
+      "memory_percent": 39.99,
+      "latency_ms": 69.07,
+      "error_rate": 0.49
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 33.87,
+      "memory_percent": 50.68,
+      "latency_ms": 73.55,
+      "error_rate": 0.32
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 20.66,
+      "memory_percent": 48.46,
+      "latency_ms": 26.9,
+      "error_rate": 0.3
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 20.0,
+      "memory_percent": 41.69,
+      "latency_ms": 39.01,
+      "error_rate": 0.06
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 33.85,
+      "memory_percent": 51.58,
+      "latency_ms": 55.56,
+      "error_rate": 0.07
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 22.56,
+      "memory_percent": 47.55,
+      "latency_ms": 70.33,
+      "error_rate": 0.32
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 35.23,
+      "memory_percent": 45.43,
+      "latency_ms": 32.79,
+      "error_rate": 0.13
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 19.52,
+      "memory_percent": 46.51,
+      "latency_ms": 43.48,
+      "error_rate": 0.26
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 22.14,
+      "memory_percent": 42.51,
+      "latency_ms": 53.19,
+      "error_rate": 0.08
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 18.88,
+      "memory_percent": 50.09,
+      "latency_ms": 31.2,
+      "error_rate": 0.18
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 24.77,
+      "memory_percent": 52.32,
+      "latency_ms": 58.36,
+      "error_rate": 0.25
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 35.98,
+      "memory_percent": 49.14,
+      "latency_ms": 74.51,
+      "error_rate": 0
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 18.48,
+      "memory_percent": 43.01,
+      "latency_ms": 21.73,
+      "error_rate": 0.26
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 17.92,
+      "memory_percent": 43.79,
+      "latency_ms": 21.07,
+      "error_rate": 0.48
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 24.83,
+      "memory_percent": 48.37,
+      "latency_ms": 22.87,
+      "error_rate": 0.46
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 32.36,
+      "memory_percent": 40.24,
+      "latency_ms": 60.5,
+      "error_rate": 0.49
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 25.08,
+      "memory_percent": 55.06,
+      "latency_ms": 59.78,
+      "error_rate": 0.01
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 20.78,
+      "memory_percent": 45.91,
+      "latency_ms": 64.0,
+      "error_rate": 0.48
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 30.31,
+      "memory_percent": 43.75,
+      "latency_ms": 36.59,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "notification-service",
+      "cpu_percent": 24.04,
+      "memory_percent": 52.84,
+      "latency_ms": 44.74,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 31.91,
+      "memory_percent": 42.29,
+      "latency_ms": 37.73,
+      "error_rate": 0.01
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 32.08,
+      "memory_percent": 53.11,
+      "latency_ms": 19.88,
+      "error_rate": 0.47
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 24.92,
+      "memory_percent": 45.96,
+      "latency_ms": 34.3,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 27.4,
+      "memory_percent": 52.66,
+      "latency_ms": 74.09,
+      "error_rate": 0.3
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 36.67,
+      "memory_percent": 42.67,
+      "latency_ms": 74.91,
+      "error_rate": 0.49
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 17.0,
+      "memory_percent": 44.86,
+      "latency_ms": 58.94,
+      "error_rate": 0.36
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 35.95,
+      "memory_percent": 51.9,
+      "latency_ms": 44.77,
+      "error_rate": 0.41
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 34.69,
+      "memory_percent": 43.87,
+      "latency_ms": 49.31,
+      "error_rate": 0.43
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 20.02,
+      "memory_percent": 51.05,
+      "latency_ms": 58.36,
+      "error_rate": 0.11
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 32.27,
+      "memory_percent": 57.09,
+      "latency_ms": 41.49,
+      "error_rate": 0.32
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 25.94,
+      "memory_percent": 44.0,
+      "latency_ms": 31.59,
+      "error_rate": 0.45
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 17.2,
+      "memory_percent": 51.91,
+      "latency_ms": 61.47,
+      "error_rate": 0.18
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 27.32,
+      "memory_percent": 48.07,
+      "latency_ms": 24.25,
+      "error_rate": 0.27
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 32.52,
+      "memory_percent": 42.79,
+      "latency_ms": 26.07,
+      "error_rate": 0.3
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 18.47,
+      "memory_percent": 47.01,
+      "latency_ms": 44.27,
+      "error_rate": 0.09
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 25.51,
+      "memory_percent": 52.88,
+      "latency_ms": 70.75,
+      "error_rate": 0.03
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 29.72,
+      "memory_percent": 56.04,
+      "latency_ms": 80.03,
+      "error_rate": 0.35
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 30.57,
+      "memory_percent": 48.75,
+      "latency_ms": 61.0,
+      "error_rate": 0.23
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 30.28,
+      "memory_percent": 44.68,
+      "latency_ms": 31.07,
+      "error_rate": 0.03
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 21.95,
+      "memory_percent": 54.92,
+      "latency_ms": 25.18,
+      "error_rate": 0.01
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 28.58,
+      "memory_percent": 54.49,
+      "latency_ms": 46.48,
+      "error_rate": 0.22
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 30.97,
+      "memory_percent": 44.1,
+      "latency_ms": 81.04,
+      "error_rate": 0.2
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 18.52,
+      "memory_percent": 41.44,
+      "latency_ms": 76.9,
+      "error_rate": 0.13
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 15.8,
+      "memory_percent": 39.49,
+      "latency_ms": 57.2,
+      "error_rate": 0.21
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 28.8,
+      "memory_percent": 41.96,
+      "latency_ms": 51.69,
+      "error_rate": 0.23
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 16.97,
+      "memory_percent": 49.36,
+      "latency_ms": 60.47,
+      "error_rate": 0.26
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 30.14,
+      "memory_percent": 41.53,
+      "latency_ms": 34.71,
+      "error_rate": 0.16
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 18.57,
+      "memory_percent": 53.59,
+      "latency_ms": 57.67,
+      "error_rate": 0.47
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 18.67,
+      "memory_percent": 49.2,
+      "latency_ms": 61.89,
+      "error_rate": 0.37
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "database",
+      "cpu_percent": 22.49,
+      "memory_percent": 43.01,
+      "latency_ms": 41.16,
+      "error_rate": 0.24
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 16.25,
+      "memory_percent": 54.5,
+      "latency_ms": 30.68,
+      "error_rate": 0.22
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 29.24,
+      "memory_percent": 47.54,
+      "latency_ms": 80.2,
+      "error_rate": 0.28
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 19.56,
+      "memory_percent": 48.21,
+      "latency_ms": 40.07,
+      "error_rate": 0.36
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 28.96,
+      "memory_percent": 46.01,
+      "latency_ms": 64.57,
+      "error_rate": 0.14
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 20.71,
+      "memory_percent": 55.7,
+      "latency_ms": 39.05,
+      "error_rate": 0.17
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 30.57,
+      "memory_percent": 46.77,
+      "latency_ms": 71.53,
+      "error_rate": 0.03
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 21.48,
+      "memory_percent": 46.97,
+      "latency_ms": 25.37,
+      "error_rate": 0.46
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 22.24,
+      "memory_percent": 53.89,
+      "latency_ms": 60.39,
+      "error_rate": 0.46
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 14.61,
+      "memory_percent": 43.91,
+      "latency_ms": 69.02,
+      "error_rate": 0.06
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 17.06,
+      "memory_percent": 42.05,
+      "latency_ms": 22.95,
+      "error_rate": 0.43
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 25.41,
+      "memory_percent": 43.4,
+      "latency_ms": 21.14,
+      "error_rate": 0.31
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 24.13,
+      "memory_percent": 41.22,
+      "latency_ms": 39.94,
+      "error_rate": 0.34
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 22.53,
+      "memory_percent": 47.34,
+      "latency_ms": 50.41,
+      "error_rate": 0.26
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 32.4,
+      "memory_percent": 41.57,
+      "latency_ms": 66.26,
+      "error_rate": 0.11
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 16.21,
+      "memory_percent": 41.12,
+      "latency_ms": 66.25,
+      "error_rate": 0.2
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 14.57,
+      "memory_percent": 48.83,
+      "latency_ms": 40.73,
+      "error_rate": 0.32
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 19.3,
+      "memory_percent": 46.31,
+      "latency_ms": 33.23,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 25.17,
+      "memory_percent": 48.76,
+      "latency_ms": 30.8,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 15.92,
+      "memory_percent": 51.55,
+      "latency_ms": 56.42,
+      "error_rate": 0.37
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 23.49,
+      "memory_percent": 44.92,
+      "latency_ms": 42.56,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 14.78,
+      "memory_percent": 55.06,
+      "latency_ms": 59.33,
+      "error_rate": 0.17
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 18.48,
+      "memory_percent": 52.32,
+      "latency_ms": 49.53,
+      "error_rate": 0.41
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 20.2,
+      "memory_percent": 49.18,
+      "latency_ms": 49.51,
+      "error_rate": 0.02
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 25.42,
+      "memory_percent": 54.54,
+      "latency_ms": 60.86,
+      "error_rate": 0.49
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 15.88,
+      "memory_percent": 43.91,
+      "latency_ms": 76.01,
+      "error_rate": 0.3
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 25.05,
+      "memory_percent": 51.52,
+      "latency_ms": 26.32,
+      "error_rate": 0.39
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 22.79,
+      "memory_percent": 53.18,
+      "latency_ms": 26.19,
+      "error_rate": 0.29
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 32.78,
+      "memory_percent": 42.87,
+      "latency_ms": 26.09,
+      "error_rate": 0.27
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 18.5,
+      "memory_percent": 45.07,
+      "latency_ms": 55.17,
+      "error_rate": 0.2
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "cache-service",
+      "cpu_percent": 23.48,
+      "memory_percent": 40.94,
+      "latency_ms": 69.88,
+      "error_rate": 0.26
+    },
+    {
+      "timestamp": "2026-02-13T10:10:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 22.54,
+      "memory_percent": 56.38,
+      "latency_ms": 38.95,
+      "error_rate": 0.05
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 17.7,
+      "memory_percent": 52.35,
+      "latency_ms": 50.78,
+      "error_rate": 0.08
+    },
+    {
+      "timestamp": "2026-02-13T10:12:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 28.29,
+      "memory_percent": 44.45,
+      "latency_ms": 60.62,
+      "error_rate": 0.3
+    },
+    {
+      "timestamp": "2026-02-13T10:13:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 20.3,
+      "memory_percent": 44.98,
+      "latency_ms": 56.66,
+      "error_rate": 0.49
+    },
+    {
+      "timestamp": "2026-02-13T10:14:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 22.88,
+      "memory_percent": 53.21,
+      "latency_ms": 69.0,
+      "error_rate": 0.45
+    },
+    {
+      "timestamp": "2026-02-13T10:15:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 33.41,
+      "memory_percent": 45.91,
+      "latency_ms": 38.05,
+      "error_rate": 0.27
+    },
+    {
+      "timestamp": "2026-02-13T10:16:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 28.28,
+      "memory_percent": 48.33,
+      "latency_ms": 22.92,
+      "error_rate": 0
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 31.33,
+      "memory_percent": 51.25,
+      "latency_ms": 35.45,
+      "error_rate": 0.18
+    },
+    {
+      "timestamp": "2026-02-13T10:18:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 23.4,
+      "memory_percent": 54.29,
+      "latency_ms": 38.69,
+      "error_rate": 0.34
+    },
+    {
+      "timestamp": "2026-02-13T10:19:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 29.5,
+      "memory_percent": 39.13,
+      "latency_ms": 22.89,
+      "error_rate": 0.13
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 28.18,
+      "memory_percent": 51.21,
+      "latency_ms": 32.92,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 33.69,
+      "memory_percent": 55.07,
+      "latency_ms": 23.74,
+      "error_rate": 0.12
+    },
+    {
+      "timestamp": "2026-02-13T10:22:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 24.1,
+      "memory_percent": 44.07,
+      "latency_ms": 65.05,
+      "error_rate": 0
+    },
+    {
+      "timestamp": "2026-02-13T10:23:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 27.8,
+      "memory_percent": 45.11,
+      "latency_ms": 68.78,
+      "error_rate": 0.33
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 19.32,
+      "memory_percent": 47.44,
+      "latency_ms": 56.28,
+      "error_rate": 0.23
+    },
+    {
+      "timestamp": "2026-02-13T10:25:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 31.61,
+      "memory_percent": 55.95,
+      "latency_ms": 68.95,
+      "error_rate": 0.16
+    },
+    {
+      "timestamp": "2026-02-13T10:26:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 23.53,
+      "memory_percent": 46.81,
+      "latency_ms": 59.24,
+      "error_rate": 0.34
+    },
+    {
+      "timestamp": "2026-02-13T10:27:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 27.72,
+      "memory_percent": 53.28,
+      "latency_ms": 57.08,
+      "error_rate": 0.37
+    },
+    {
+      "timestamp": "2026-02-13T10:28:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 15.03,
+      "memory_percent": 38.95,
+      "latency_ms": 45.46,
+      "error_rate": 0.04
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 35.04,
+      "memory_percent": 48.45,
+      "latency_ms": 47.97,
+      "error_rate": 0.41
+    },
+    {
+      "timestamp": "2026-02-13T10:30:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 25.21,
+      "memory_percent": 40.14,
+      "latency_ms": 52.15,
+      "error_rate": 0.23
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 19.9,
+      "memory_percent": 42.52,
+      "latency_ms": 36.62,
+      "error_rate": 0.41
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 17.1,
+      "memory_percent": 45.75,
+      "latency_ms": 48.87,
+      "error_rate": 0.27
+    },
+    {
+      "timestamp": "2026-02-13T10:33:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 15.63,
+      "memory_percent": 51.76,
+      "latency_ms": 52.11,
+      "error_rate": 0.35
+    },
+    {
+      "timestamp": "2026-02-13T10:34:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 24.12,
+      "memory_percent": 53.27,
+      "latency_ms": 59.27,
+      "error_rate": 0.1
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 19.45,
+      "memory_percent": 39.39,
+      "latency_ms": 29.69,
+      "error_rate": 0.06
+    },
+    {
+      "timestamp": "2026-02-13T10:36:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 18.96,
+      "memory_percent": 42.48,
+      "latency_ms": 20.74,
+      "error_rate": 0
+    },
+    {
+      "timestamp": "2026-02-13T10:37:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 27.86,
+      "memory_percent": 55.61,
+      "latency_ms": 85.07,
+      "error_rate": 0.17
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 31.9,
+      "memory_percent": 47.23,
+      "latency_ms": 77.14,
+      "error_rate": 0.47
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.407598+00:00",
+      "service": "merchant-portal",
+      "cpu_percent": 34.3,
+      "memory_percent": 41.24,
+      "latency_ms": 39.02,
+      "error_rate": 0.2
+    }
+  ],
+  "logs": [
+    {
+      "timestamp": "2026-02-13T10:10:43.834308+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:45.798777+00:00",
+      "service": "merchant-portal",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:50.468523+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Payment authorisation approved \u2014 txn_id=TXN-337767."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:51.049138+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Health check passed \u2014 all upstreams healthy."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:52.859008+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:53.668240+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:54.372669+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:10:56.255211+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:12.448328+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:13.262073+00:00",
+      "service": "merchant-portal",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:13.340010+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:14.820704+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:20.138757+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Payment authorisation approved \u2014 txn_id=TXN-268698."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:21.817275+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:27.181401+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:28.027243+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:42.363780+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:43.725597+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:44.768774+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.345554+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:49.759003+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:51.916040+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:54.539620+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Settlement batch queued \u2014 128 transactions."
+    },
+    {
+      "timestamp": "2026-02-13T10:11:55.046669+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:12.250473+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:16.707418+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:18.043057+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:21.757214+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: GC overhead limit exceeded."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:23.033086+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:23.173648+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Health check passed \u2014 all upstreams healthy."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:23.499956+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:28.040138+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:40.834036+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:42.471007+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:43.077641+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: Java heap space."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:44.506648+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:45.401781+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:46.584113+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:48.463471+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:12:52.524819+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:10.706904+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:15.669934+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:16.867629+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:20.519093+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:20.677421+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:21.355689+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Heap usage at 36% \u2014 approaching threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:22.739595+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "TLS handshake completed for inbound connection."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:27.066589+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:42.504117+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:42.815289+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:47.216674+00:00",
+      "service": "fraud-service",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:47.814555+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:48.146879+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:48.204915+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:48.276925+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Request routed successfully to downstream service."
+    },
+    {
+      "timestamp": "2026-02-13T10:13:50.000173+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: Java heap space."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:10.690481+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:13.122897+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:14.538229+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:19.503087+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:21.621788+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:22.958197+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:25.320267+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:25.885987+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Settlement batch queued \u2014 128 transactions."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:40.978247+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:45.370908+00:00",
+      "service": "database",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:46.624484+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:46.791164+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Connection reset by peer \u2014 downstream unreachable."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:47.946534+00:00",
+      "service": "auth-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:48.709164+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:54.026497+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:14:56.193605+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Refund processed successfully \u2014 txn_id=TXN-423010."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:11.674639+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:13.901858+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:14.758291+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:16.504915+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:17.129788+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Rate limiter bucket refilled."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:20.387346+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:21.783120+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Settlement batch queued \u2014 128 transactions."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:21.791358+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:42.254713+00:00",
+      "service": "notification-service",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:43.971079+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:44.725056+00:00",
+      "service": "database",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:47.950234+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "TLS handshake completed for inbound connection."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:48.024454+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Refund processed successfully \u2014 txn_id=TXN-297453."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:53.653582+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:54.100269+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:15:57.190232+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:12.505146+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:13.750354+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:14.745004+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:22.154328+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "Upstream latency elevated \u2014 RTT 826ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:23.265323+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:25.275950+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:25.951152+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Refund processed successfully \u2014 txn_id=TXN-515448."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:26.071019+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:41.312635+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Large object allocation detected \u2014 260 MB."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:43.509999+00:00",
+      "service": "merchant-portal",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:52.230338+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:52.983411+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:52.993155+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Cache hit ratio: 94.2 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:54.347784+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:55.969697+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:16:56.764217+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:11.103650+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:14.460047+00:00",
+      "service": "database",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:20.033288+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:22.645020+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:23.246690+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: Java heap space."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:25.156700+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:27.990564+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:28.045103+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:45.296771+00:00",
+      "service": "auth-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:47.711650+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:49.996499+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:53.618986+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:53.977016+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:54.153904+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "DNS resolution slow \u2014 115ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:55.878724+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:17:57.737387+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Service crash \u2014 OOM killer invoked by kernel."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:11.132224+00:00",
+      "service": "database",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:13.420799+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:15.529549+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:15.912936+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:22.290342+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:25.081500+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 470 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:25.397085+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "java.net.SocketException: Connection timed out."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:26.540527+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:41.802139+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:42.497381+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:43.955720+00:00",
+      "service": "auth-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:45.975158+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:46.580269+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:50.488754+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Container restarted \u2014 exit code 137 (OOMKilled)."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:52.624373+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:18:54.530572+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Rate limiter bucket refilled."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:10.539444+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:13.378059+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:15.138195+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:18.141120+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Idempotency key cache hit \u2014 duplicate request ignored."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:20.778374+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Rate limiter bucket refilled."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:21.647937+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:23.099151+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:25.610473+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:44.742512+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:45.434301+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Refund processed successfully \u2014 txn_id=TXN-466091."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:53.527364+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:53.921399+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:55.700571+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "Upstream latency elevated \u2014 RTT 1300ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:55.806427+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:56.857303+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:19:57.922629+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:11.026554+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:12.147225+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:17.985731+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Service crash \u2014 OOM killer invoked by kernel."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:19.379972+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:20.305651+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "DNS resolution slow \u2014 149ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:24.059742+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:25.509073+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:28.160803+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Cache hit ratio: 94.2 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:42.746056+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:43.198098+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Heap usage at 52% \u2014 approaching threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:44.464084+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:48.710955+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:49.186201+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:52.151131+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "TLS handshake completed for inbound connection."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:53.067041+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:20:53.238396+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:10.512613+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: GC overhead limit exceeded."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:11.401463+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:13.331458+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:14.609428+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:16.455462+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:24.105102+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:25.536051+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Rate limiter bucket refilled."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:27.013811+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:40.610091+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:43.286531+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:46.155247+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.643478+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:49.688216+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:51.510862+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:54.491684+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:21:54.712373+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Settlement batch queued \u2014 128 transactions."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:13.546328+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:15.261649+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:15.541935+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Rate limiter bucket refilled."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:17.138595+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:19.198048+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:22.615881+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:26.371160+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: GC overhead limit exceeded."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:27.585947+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:42.253483+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:42.630716+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Heap usage at 56% \u2014 approaching threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:44.867255+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:44.896805+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:50.234915+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:50.903581+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:57.325138+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:22:57.537678+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:11.962835+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:15.977764+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:15.978222+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:24.302527+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Service crash \u2014 OOM killer invoked by kernel."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:24.967327+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:25.593813+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:26.711643+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:27.745304+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:43.060263+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 497 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:45.010291+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:52.100979+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:52.312137+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:52.760080+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:53.207255+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:57.615514+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:23:57.616099+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:11.647160+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:12.120459+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:17.233842+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:22.214358+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Heap usage at 60% \u2014 approaching threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:23.189562+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:23.235038+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:24.246409+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:24.661547+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "DNS resolution slow \u2014 203ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:42.415383+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:46.845946+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Container restarted \u2014 exit code 137 (OOMKilled)."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:47.017154+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:49.947758+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:51.669375+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:53.031627+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TLS handshake timeout \u2014 retrying."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:54.804935+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:24:55.135392+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:10.571594+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:12.786796+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:15.714029+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:17.134738+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:17.772873+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Memory pool 'Old Gen' above 80 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:19.635025+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Cache hit ratio: 94.2 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:23.813550+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "Upstream latency elevated \u2014 RTT 2046ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:25.423681+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:40.420554+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 338 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:40.672300+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:43.627016+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:44.634125+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:50.553468+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:51.803872+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:54.243122+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:25:55.975198+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:12.406591+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:13.509394+00:00",
+      "service": "database",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:23.067415+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:23.934567+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:23.986225+00:00",
+      "service": "merchant-portal",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:24.383201+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:24.996421+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Refund processed successfully \u2014 txn_id=TXN-657290."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:26.947382+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:43.375625+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:43.394028+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:43.997546+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:46.075820+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:46.559675+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:50.519084+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Health check passed \u2014 all upstreams healthy."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:50.879215+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:26:57.304910+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Container restarted \u2014 exit code 137 (OOMKilled)."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:14.981597+00:00",
+      "service": "merchant-portal",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:17.270528+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:18.144581+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Payment authorisation approved \u2014 txn_id=TXN-778606."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:22.798921+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:23.207909+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:23.409860+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "Upstream latency elevated \u2014 RTT 2317ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:26.060143+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:27.879684+00:00",
+      "service": "auth-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:41.702117+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Connection reset by peer \u2014 downstream unreachable."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:43.874048+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:51.086745+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:56.297980+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:56.522292+00:00",
+      "service": "merchant-portal",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:56.866610+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:57.049486+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:27:58.032875+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: Java heap space."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:13.298799+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:18.746141+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Settlement batch queued \u2014 128 transactions."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:19.076525+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:19.539908+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:22.831398+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:23.783646+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:24.649410+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:26.126828+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:45.241221+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:46.655857+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:46.801060+00:00",
+      "service": "merchant-portal",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:47.881088+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:48.713515+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:51.286505+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Memory pool 'Old Gen' above 80 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:54.236507+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:28:57.487763+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:10.743100+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:12.002350+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "GC overhead increasing \u2014 major collections every 7s."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:13.313650+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:16.459867+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:22.056461+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:22.266588+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:27.837232+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Connection pool nearing capacity \u2014 85 % utilised."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:28.167528+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:41.318849+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:42.045740+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:45.962642+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.066301+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:49.625385+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:50.508343+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:54.135752+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 323 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:29:55.500719+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:11.864843+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "java.net.SocketException: Connection timed out."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:13.689836+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:15.000237+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:15.668951+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Refund processed successfully \u2014 txn_id=TXN-446808."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:17.145068+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:19.980505+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:21.869464+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:28.054171+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:41.148944+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "java.net.SocketException: Connection timed out."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:48.194772+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Large object allocation detected \u2014 280 MB."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:50.489628+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:52.923176+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:55.340323+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:56.535779+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:56.820629+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:30:57.165180+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:11.728123+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:12.607086+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:16.276915+00:00",
+      "service": "database",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:17.656435+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:18.684305+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "TLS handshake completed for inbound connection."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:20.322998+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:25.315609+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:27.461709+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 345 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:42.627180+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:48.261964+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Payment authorisation approved \u2014 txn_id=TXN-666441."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:48.267578+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:49.182392+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:52.986216+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:54.237055+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:54.541632+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:31:57.102428+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:10.558379+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:11.153853+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Request routed successfully to downstream service."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:13.939783+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:15.471694+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:15.552140+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:16.792083+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:20.900670+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: GC overhead limit exceeded."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:25.930604+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:40.516224+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 221 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:43.430373+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.057442+00:00",
+      "service": "database",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:49.273803+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:54.161774+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:54.328336+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:55.038170+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:32:57.954088+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:14.747803+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:20.282488+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:22.189565+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:22.778631+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "Upstream latency elevated \u2014 RTT 3131ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:23.676603+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:24.516703+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Payment authorisation approved \u2014 txn_id=TXN-516587."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:27.638709+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:27.924226+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:41.741335+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:43.604597+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:45.579287+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:45.952169+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:48.278752+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Password hash comparison passed."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:48.446579+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "GC overhead increasing \u2014 major collections every 5s."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:52.952549+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Cache hit ratio: 94.2 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:33:54.652908+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:10.746552+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:17.306756+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:18.036685+00:00",
+      "service": "notification-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:18.190103+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:20.326725+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Service crash \u2014 OOM killer invoked by kernel."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:23.821675+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:24.706574+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:24.899086+00:00",
+      "service": "database",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:43.983370+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Cache hit ratio: 94.2 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:44.764177+00:00",
+      "service": "auth-service",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:46.871349+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:47.076611+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:47.628780+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:47.936724+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:51.764852+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Container restarted \u2014 exit code 137 (OOMKilled)."
+    },
+    {
+      "timestamp": "2026-02-13T10:34:52.562096+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:11.779516+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:11.958722+00:00",
+      "service": "auth-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:16.382244+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:16.492179+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:19.109049+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:19.158064+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Large object allocation detected \u2014 209 MB."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:20.735332+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:25.978735+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:46.822203+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:48.409698+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:49.937979+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:51.182929+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Health check passed \u2014 all upstreams healthy."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:51.748720+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:53.011209+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:55.289919+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: GC overhead limit exceeded."
+    },
+    {
+      "timestamp": "2026-02-13T10:35:57.488895+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:12.007854+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:14.911083+00:00",
+      "service": "payment-service",
+      "level": "INFO",
+      "message": "Idempotency key cache hit \u2014 duplicate request ignored."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:14.914606+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:15.366884+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Fraud check passed for merchant_id=M-10234."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:18.368205+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:21.245704+00:00",
+      "service": "auth-service",
+      "level": "ERROR",
+      "message": "Unexpected internal error \u2014 see stack trace."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:23.280528+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:26.760810+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "java.net.SocketException: Connection timed out."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:42.591601+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:43.123812+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:45.873865+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:46.107988+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Response time approaching SLA threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:51.363606+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:52.043344+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Checkpoint completed \u2014 WAL flushed."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:53.644795+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Connection reset by peer \u2014 downstream unreachable."
+    },
+    {
+      "timestamp": "2026-02-13T10:36:54.562348+00:00",
+      "service": "payment-service",
+      "level": "WARNING",
+      "message": "Heap usage at 87% \u2014 approaching threshold."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:12.179587+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:12.368783+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: Java heap space."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:15.481940+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:16.207935+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:21.640298+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:23.072096+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Request routed successfully to downstream service."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:27.278393+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Static asset bundle served from CDN."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:27.632506+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:42.408736+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Session key refreshed."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:44.707139+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:45.363110+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:45.810070+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "Upstream latency elevated \u2014 RTT 3741ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:48.266773+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:54.355306+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:57.025272+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 274 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:37:57.073159+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:11.627014+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "Service unavailable \u2014 upstream returned HTTP 503."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:12.542322+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:15.383558+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Redis PING \u2014 PONG received in 1 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:16.477078+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: GC overhead limit exceeded."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:19.771602+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Email dispatched to merchant \u2014 template=payment_received."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:20.623191+00:00",
+      "service": "fraud-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:21.510194+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:25.818768+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Dashboard page rendered \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:42.207723+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:43.002882+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Eviction cycle completed \u2014 230 keys removed."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:45.173262+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "Request routed successfully to downstream service."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:45.296609+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:45.582499+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "OutOfMemoryError: Java heap space."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:49.058855+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "SMS queued \u2014 provider=twilio."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:51.328484+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Vacuum completed on table 'transactions'."
+    },
+    {
+      "timestamp": "2026-02-13T10:38:53.690094+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:12.823580+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Rule engine evaluation completed in 12 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:15.045954+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "SSO callback processed \u2014 session created."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:15.241217+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Push notification delivered."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:15.403539+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Garbage collection pause exceeded 200 ms."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:20.396600+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:20.998119+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 466 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:25.795118+00:00",
+      "service": "api-gateway",
+      "level": "ERROR",
+      "message": "java.net.SocketException: Connection timed out."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:26.558634+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:42.725015+00:00",
+      "service": "api-gateway",
+      "level": "WARNING",
+      "message": "TCP retransmissions detected on outbound socket."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:47.636620+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Replication lag: 0.3 s."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:49.355513+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:51.483143+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Transaction scored \u2014 risk=LOW."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:54.749327+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "OAuth2 refresh token issued."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:54.759463+00:00",
+      "service": "cache-service",
+      "level": "WARNING",
+      "message": "Retry attempt 1/3 for downstream call."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:56.997013+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Container restarted \u2014 exit code 137 (OOMKilled)."
+    },
+    {
+      "timestamp": "2026-02-13T10:39:57.599312+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "Merchant settings updated."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:12.429322+00:00",
+      "service": "database",
+      "level": "INFO",
+      "message": "Connection pool utilisation at 42 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:14.680665+00:00",
+      "service": "merchant-portal",
+      "level": "INFO",
+      "message": "CSV export started for merchant_id=M-5021."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:15.883424+00:00",
+      "service": "fraud-service",
+      "level": "INFO",
+      "message": "Model inference latency within SLA."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:17.565065+00:00",
+      "service": "cache-service",
+      "level": "INFO",
+      "message": "Cache hit ratio: 94.2 %."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:18.359442+00:00",
+      "service": "notification-service",
+      "level": "INFO",
+      "message": "Webhook callback acknowledged \u2014 200 OK."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:20.093914+00:00",
+      "service": "payment-service",
+      "level": "ERROR",
+      "message": "Failed to allocate 362 MB \u2014 heap exhausted."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:20.937716+00:00",
+      "service": "api-gateway",
+      "level": "INFO",
+      "message": "TLS handshake completed for inbound connection."
+    },
+    {
+      "timestamp": "2026-02-13T10:40:24.222690+00:00",
+      "service": "auth-service",
+      "level": "INFO",
+      "message": "Token validated successfully for user session."
+    }
+  ],
+  "root_cause": "payment-service memory leak",
+  "severity": "SEV-2",
+  "scenario": "memory_leak",
+  "blast_radius": {
+    "failed_service": "payment-service",
+    "directly_affected": [
+      "api-gateway"
+    ],
+    "indirectly_affected": [
+      "merchant-portal"
+    ],
+    "total_affected": 2,
+    "all_affected": [
+      "api-gateway",
+      "merchant-portal"
+    ]
+  }
+}
